@@ -1,0 +1,72 @@
+<div class="registroBox">
+  <div class="registroHeaderBox">
+    <img src="assets/grafico-escritorio.png" alt="" />
+    <p>Regístrate con nosotros</p>
+  </div>
+  <div class="registroContentBox">
+    <div class="registroColumn">
+      <p>Datos personales</p>
+      <mat-form-field class="formInput" appearance="standard">
+        <mat-label>Nombres</mat-label>
+        <input type="text" matInput value="" [(ngModel)]="names" />
+      </mat-form-field>
+      <mat-form-field class="formInput" appearance="standard">
+        <mat-label>Apellidos</mat-label>
+        <input type="text" matInput value="" [(ngModel)]="lastnames" />
+      </mat-form-field>
+      <mat-form-field class="formInput" appearance="standard">
+        <mat-label>Documento de identidad</mat-label>
+        <input type="text" matInput value="" [(ngModel)]="identification" />
+      </mat-form-field>
+      <mat-form-field class="formInput" appearance="standard">
+        <mat-label>Fecha de nacimiento</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="birthday" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <p>Información de contacto</p>
+      <mat-form-field class="formInput" appearance="standard">
+        <mat-label>Teléfono</mat-label>
+        <input type="tel" matInput value="" [(ngModel)]="phone" />
+      </mat-form-field>
+      <mat-form-field class="formInput" appearance="standard">
+        <mat-label>Dirección</mat-label>
+        <input type="text" matInput value="" [(ngModel)]="address" />
+      </mat-form-field>
+    </div>
+    <div class="registroColumn">
+      <p>Datos para crear la cuenta</p>
+      <mat-form-field class="formInput" appearance="standard">
+        <mat-label>Correo electrónico</mat-label>
+        <input type="text" matInput value="" [(ngModel)]="email" />
+      </mat-form-field>
+      <mat-form-field class="formInput" appearance="standard">
+        <mat-label>Usuario</mat-label>
+        <input type="text" matInput value="" [(ngModel)]="username" />
+      </mat-form-field>
+      <mat-form-field class="formInput" appearance="standard">
+        <mat-label>Contraseña</mat-label>
+        <input type="password" matInput value="" [(ngModel)]="password" />
+      </mat-form-field>
+      <mat-form-field class="formInput" appearance="standard">
+        <mat-label>Confirmar contraseña</mat-label>
+        <input type="password" matInput value="" [(ngModel)]="cpassword" />
+      </mat-form-field>
+      <div class="tagsBox">
+        <p>Al hacer click en Registrarse, acepta los <a href="/politicas">términos, condiciones generales y demás políticas y principios</a>
+          regulan el uso del sitio web</p>
+      </div>
+
+      <button mat-button (click)="registrar()">REGISTRARSE</button>
+    </div>
+    <div class="registroColumn">
+      <p class="registroText">
+
+          Cashpro es una plataforma diseñada para gente con coraje y valentía, que quieran
+          poner en marcha este extraordinario sistema, que transformara su vida para
+          un futuro mejor. Uniéndose de manera voluntaria e independiente,
+          trabajando en equipo con igualdad y equidad.
+        </p>
+    </div>
+  </div>
+</div>

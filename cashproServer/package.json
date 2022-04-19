@@ -1,0 +1,32 @@
+{
+  "name": "cashpro_server",
+  "version": "1.0.0",
+  "description": "Servidor de Cashpro, contendra principalmente una Api para interactuar con las aplicaciones web y movil.",
+  "main": "web/webServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node web/webServer.js"
+  },
+  "dependencies": {
+    "async": "^2.6.0",
+    "bluebird": "*",
+    "body-parser": "*",
+    "compression": "^1.7.0",
+    "cors": "*",
+    "cron": "*",
+    "express": "*",
+    "helmet": "^3.9.0",
+    "mongoose": "*",
+    "node-schedule": "*",
+    "redis": "*",
+    "heapdump": "*",
+    "winston": "^3.3.3"
+  },
+  "keywords": [
+    "loteria",
+    "servidor",
+    "ecuador"
+  ],
+  "author": "Tecnobunker",
+  "license": "ISC"
+}

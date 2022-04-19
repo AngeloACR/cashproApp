@@ -1,0 +1,19 @@
+<div class="loginBox">
+  <img src="assets/grafico-escritorio.png" alt="" />
+  <div class="formBox">
+    <mat-form-field class="formInput" appearance="standard">
+      <mat-label>Correo electrónico</mat-label>
+      <input type="text" matInput value="" [(ngModel)]="email" />
+    </mat-form-field>
+    <mat-form-field class="formInput" appearance="standard">
+      <mat-label>Contraseña</mat-label>
+      <input type="password" matInput value="" [(ngModel)]="password" />
+    </mat-form-field>
+  </div>
+  <div class="tagsBox">
+    <mat-checkbox [(ngModel)]="recordarme">Recordarme</mat-checkbox>
+    <p (click)="recuperarPassword()">Olvidaste tu contraseña?</p>
+  </div>
+
+  <button mat-button (click)="login()">INICIAR SESIÓN</button>
+</div>

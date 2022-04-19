@@ -1,0 +1,27 @@
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
+})
+export class LoginComponent implements OnInit {
+  email: string = "";
+  password: string = "";
+  recordarme: string = "";
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+  }
+
+  async login(){
+    this.router.navigateByUrl('dashboard')    
+    
+  }
+
+  recuperarPassword(){
+  this.router.navigateByUrl('auth/recuperar')    
+  }
+
+}

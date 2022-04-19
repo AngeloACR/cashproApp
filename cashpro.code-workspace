@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../marguz/app/marguzFront"
+		},
+		{
+			"path": "../../InVen/app/invenapp"
+		}
+	],
+	"settings": {}
+}

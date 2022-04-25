@@ -1,0 +1,73 @@
+.queHacemosBox {
+    width: 100%;
+    height: 500px;
+    background-color: #0C1119;
+    .queHacemos {
+        padding: 5rem 10rem;
+        p {
+            font-family: 'Comfortaa';
+            font-weight: 400;
+            color: #006B80;
+            font-size: 14px;
+        }
+        h2 {
+            font-size: 32px;
+            font-family: 'Inter';
+            font-weight: 900;
+            color: #fff;
+            width: 50%;
+            line-height: 40px;
+        }
+    }
+    .tarjetasBox {
+        margin-top: 2rem;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5rem;
+        .tarjeta {
+            padding: 2rem;
+            width: 100%;
+            background-color: #2D3D54;
+            border-radius: 20px;
+            img {
+                width: 10%;
+            }
+            h3, p {
+                color: #fff;
+            }
+            h3 {
+                font-family: "Inter";
+                font-weight: 900;
+            }
+            p {
+                font-family: "Comfortaa";
+                font-weight: 400;
+                width: 75%;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .queHacemosBox {
+        height: auto !important;
+        .queHacemos {
+            padding: 4rem 3rem !important;
+            h2 {
+                width: 100% !important;
+                font-size: 22px !important;
+            }
+        }
+        .tarjetasBox {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 0 !important;
+            .tarjeta {
+                padding: 10px !important;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

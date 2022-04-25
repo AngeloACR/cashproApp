@@ -1,8 +1,51 @@
 <div class="menuHeaderBox">
     <div class="logoBox">
-        <img src="" alt="">
+        <img src="/assets/grafico-home.png" alt="">
     </div>
-    <div class="menuBox">
-
+    <div class="enlaces"> 
+        <div class="menuBox">
+            <ul>
+                <li>
+                    <a href="">Quienes somos</a>
+                </li>
+                <li>
+                    <a href="">Que hacemos</a>
+                </li>
+                <li>
+                    <a href="">Forma parte</a>
+                </li>
+                <li>
+                    <a href="">Contacto</a>
+                </li>
+            </ul>
+        </div>
+        <div class="auth">
+            <a class="register">REGISTRATE</a>
+            <button class="login">INICIAR</button>
+        </div>
     </div>
+    <div class="burger" [ngClass]="{'activo': toggle, 'inactivo': !toggle}" > 
+        <button class="btnArrow" (click)="hidden()">burger</button>
+        <div class="burgerBox">
+            <ul>
+                <li>
+                    <a href="">Quienes somos</a>
+                </li>
+                <li>
+                    <a href="">Que hacemos</a>
+                </li>
+                <li>
+                    <a href="">Forma parte</a>
+                </li>
+                <li>
+                    <a href="">Contacto</a>
+                </li>
+            </ul>
+        </div>
+        <div class="auth">
+            <a class="register">REGISTRATE</a>
+            <button class="login">INICIAR</button>
+        </div>
+    </div>
+    <button class="toggle" (click)="hidden()">icon</button>
 </div>

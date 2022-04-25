@@ -1,0 +1,80 @@
+.landingBox {
+    padding-top: 6rem;
+    .texto-principal {
+        margin-top: 40px;
+        h3 {
+            width: 70%;
+            margin: auto;
+            font-size: 48px;
+            color: #fff;
+            text-align: center;
+            font-weight: 900;
+            line-height: 60px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 900;
+        }
+    }
+    p {
+        margin-top: 30px;
+        text-align: center;
+        color: #fff;
+        font-size: 14px;
+        font-family: 'Comfortaa', sans-serif;
+        font-weight: 400;
+    }
+    .buttonBox {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;
+
+        .formaParte {
+            color: #fff;
+            padding: 8px 40px;
+            border-radius: 20px;
+            background-color: #006B80;
+            border: none;
+            margin-right: 20px;
+        }
+        .contacto {
+            color: #fff;
+            padding: 8px 40px;
+            border-radius: 20px;
+            background: none;
+            border: 1px solid #fff;
+        }         
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .landingBox {
+        .texto-principal {
+            h3 {
+                width: 90%;
+                font-size: 24px !important;
+                line-height: 40px !important;
+            }
+        }
+        p {
+            width: 90%;
+            font-size: 13px !important;
+            text-align: center !important;
+            margin: 1rem auto;
+        }
+        .buttonBox {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-top: 40px;
+    
+            .formaParte {
+                padding: 7px 25px;
+                font-size: 10px !important;
+            }
+            .contacto {
+                padding: 7px 25px;
+                font-size: 10px !important;
+            }         
+        }
+    }
+}

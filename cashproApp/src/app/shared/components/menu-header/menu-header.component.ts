@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuHeaderComponent implements OnInit {
 
+  toggle:boolean = false;
+
+  hidden() {
+    this.toggle = !this.toggle;
+  }
+
   constructor() { }
 
   ngOnInit(): void {

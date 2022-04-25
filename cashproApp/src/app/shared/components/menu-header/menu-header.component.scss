@@ -1,10 +1,142 @@
 .menuHeaderBox{
     width: 100%;
     height: 71px;
+    padding: 25px 0px;
     color: white; 
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    .logoBox {
+        width: auto;
+        img {
+            width: 70px;
+        }
+    }
+    .activo {
+        right: 0 !important;
+    }
+    .inactivo {
+        right: 100% !important;
+    }
+    .enlaces {
+        display: flex;
+        justify-content: space-between;
+        .menuBox {
+            display: flex;
+            justify-content: center;
+            ul {
+                display: flex;
+                align-items: center;
+                li {
+                    list-style: none;
+                    padding: 8px 30px;
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                        font-size: 13px;
+                        font-family: 'Comfortaa', sans-serif;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+        .auth {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            font-family: 'Comfortaa', sans-serif;
+            font-weight: 400;
+    
+            .register {
+                margin-right: 18px;
+                text-decoration: underline;
+            }
+            .login {
+                color: #fff;
+                padding: 10px 50px;
+                border-radius: 20px;
+                background-color: #006B80;
+                border: none;
+                font-family: 'Comfortaa', sans-serif;
+            }
+        }
+    }
+    .burger {
+        position: absolute;
+        width: 100%;
+        right: 100%;
+        background-color: #A3A3A3CC;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        .btnArrow {
+            display: flex;
+            padding: 1rem;
+            border: none;
+            background: none;
+            justify-content: flex-end;
+        }
+        .burgerBox {
+            width: 100%;
+            ul {
+                display: flex;
+                flex-direction: column;
+                padding: 1rem;
+                li {
+                    list-style: none;
+                    padding: 1rem 0;
+                    border-bottom: 1px solid #fff;
+                    a {
+                        width: 100%;
+                        text-decoration: none;
+                        font-family: "Comfortaa";
+                        padding-bottom: 0.5rem;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+        .auth {
+            width: 100%;
+            height: 90px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 15px;
+            font-family: 'Comfortaa', sans-serif;
+            font-weight: 400;
+    
+            .register {
+                margin-right: 18px;
+                text-decoration: underline;
+            }
+            .login {
+                color: #fff;
+                padding: 10px 50px;
+                border-radius: 20px;
+                background-color: #006B80;
+                border: none;
+                font-family: 'Comfortaa', sans-serif;
+            }
+        }
+    }
+    .toggle {
+        display: none;
+    }
 }
 
-@media only screen and (min-width: 768px){
-    .menuHeaderBox{
+@media only screen and (max-width: 768px){
+    .menuHeaderBox {
+        justify-content: space-between !important;
+        .logoBox {
+            margin-left: 2rem !important;
+        }
+        .enlaces {
+            display: none !important;
+        }
+        .toggle {
+            display: flex !important;
+            margin-right: 2rem !important;
+        }
     }
 }

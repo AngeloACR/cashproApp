@@ -8,6 +8,15 @@
 		},
 		{
 			"path": "../../InVen/app/invenapp"
+		},
+		{
+			"path": "../../InVen/invenApp/invenServer/users"
+		},
+		{
+			"path": "../../Santa Maria/SamavenApp/samavenServer/users"
+		},
+		{
+			"path": "../../loteriaNacional/app/loteriaNacionalServer"
 		}
 	],
 	"settings": {}

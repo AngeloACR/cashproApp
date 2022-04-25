@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recuperar',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecuperarComponent implements OnInit {
 
-  constructor() { }
+  email: string = "";
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+
+  async recuperar(){
+    this.router.navigateByUrl('auth')    
+    
   }
 
 }

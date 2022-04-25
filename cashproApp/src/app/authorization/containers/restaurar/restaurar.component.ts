@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-restaurar',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./restaurar.component.scss']
 })
 export class RestaurarComponent implements OnInit {
-
-  constructor() { }
-
+  password?: string
+  cpassword?: string
+  
+  constructor(private router: Router) { }
+  
   ngOnInit(): void {
+  }
+  async restaurar(){
+    this.router.navigateByUrl('auth')    
+    
   }
 
 }

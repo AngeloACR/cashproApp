@@ -10,7 +10,9 @@
   "dependencies": {
     "async": "^2.6.0",
     "bluebird": "*",
+    "bcryptjs": "*",
     "body-parser": "*",
+    "jsonwebtoken": "*",
     "compression": "^1.7.0",
     "cors": "*",
     "cron": "*",
@@ -23,9 +25,9 @@
     "winston": "^3.3.3"
   },
   "keywords": [
-    "loteria",
-    "servidor",
-    "ecuador"
+    "cashpro",
+    "capitalizacion",
+    "usa"
   ],
   "author": "Tecnobunker",
   "license": "ISC"

@@ -1,1 +1,11 @@
-<p>recuperar works!</p>
+<div class="loginBox">
+    <img src="assets/grafico-escritorio.png" alt="" />
+    <div class="formBox">
+      <mat-form-field class="formInput" appearance="standard">
+        <mat-label>Correo electrónico</mat-label>
+        <input type="text" matInput value="" [(ngModel)]="email" />
+      </mat-form-field>
+    </div>  
+    <button mat-button (click)="recuperar()">RECUPERAR CONTRASEÑA</button>
+  </div>
+  

@@ -1,1 +1,15 @@
-<p>restaurar works!</p>
+<div class="loginBox">
+  <img src="assets/grafico-escritorio.png" alt="" />
+  <div class="formBox">
+    <mat-form-field class="formInput" appearance="standard">
+      <mat-label>Contraseña</mat-label>
+      <input type="password" matInput value="" [(ngModel)]="password" />
+    </mat-form-field>
+    <mat-form-field class="formInput" appearance="standard">
+      <mat-label>Confirmar contraseña</mat-label>
+      <input type="password" matInput value="" [(ngModel)]="cpassword" />
+    </mat-form-field>
+  </div>
+
+  <button mat-button (click)="restaurar()">RESTAURAR CONTRASEÑA</button>
+</div>

@@ -1,0 +1,78 @@
+.contactoBox {
+    width: 100%;
+    margin: 0 auto;
+    .contacto {
+        padding: 5rem 24rem;
+        h3 {
+            color: #006B80;
+            font-size: 14px;
+            font-family: "Comfortaa";
+            font-weight: 400;
+        }
+        h2 {
+            color: #0C1119;
+            font-family: "Inter";
+            font-weight: 900;
+            font-size: 35px;
+        }
+        p {
+            color: #606060;
+            font-family: "Comfortaa";
+            font-weight: 400;
+        }
+        .formularioBox {            
+            width: 100%;
+            margin-top: 2rem;
+            display: grid;
+            gap: 15px;
+            .inputs {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+                .input {
+                    font-family: "Comfortaa";
+                    border-radius: 20px;
+                    padding: 10px 15px;
+                    border: none;
+                    background-color: #C4C4C4;
+                }
+            }
+            .textArea {
+                font-family: "Comfortaa";
+                height: auto;
+                border-radius: 20px;
+                padding: 10px 15px;
+                border: none;
+                background-color: #C4C4C4;
+                resize: none;
+                font-size: 13px;
+            }
+            .btn {
+                width: 25%;
+                color: #fff;
+                padding: 8px 40px;
+                border-radius: 20px;
+                background-color: #006B80;
+                border: none;
+                margin-top: 14px;
+                font-family: "Comfortaa";
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .contacto {
+        padding: 4rem 3rem !important;
+        .formularioBox {
+            .inputs {
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            .btn {
+                width: 40% !important;
+            }
+        }
+    }
+}

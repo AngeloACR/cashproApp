@@ -1,0 +1,14 @@
+{
+  component: 'auth',
+  errorMessage: 'Usuario o contraseña inválido. Por favor, revisa tus credenciales e intenta de nuevo',
+  level: 'error',
+  message: 'authUser.error',
+  timestamp: '2022-04-20 22:39:12'
+}
+{
+  component: 'auth',
+  errorMessage: 'Usuario o contraseña inválido. Por favor, revisa tus credenciales e intenta de nuevo',
+  level: 'error',
+  message: 'authUser.error',
+  timestamp: '2022-04-20 22:39:55'
+}

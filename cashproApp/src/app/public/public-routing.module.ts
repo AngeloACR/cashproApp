@@ -6,9 +6,9 @@ import { PoliticasComponent } from './containers/politicas/politicas.component';
 import { PublicComponent } from './public.component';
 
 const routes: Routes = [
-  { path: 'landing', component: LandingComponent },
+  { path: '', component: LandingComponent },
   { path: 'politicas', component: PoliticasComponent },
-  { path: '*', component: NotFoundComponent }
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({

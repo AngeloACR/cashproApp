@@ -34,7 +34,6 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
   ],
   imports: [
     CommonModule,
-    SharedRoutingModule
   ]
 })
 export class SharedModule { }

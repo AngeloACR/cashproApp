@@ -47,5 +47,5 @@
             <button class="login">INICIAR</button>
         </div>
     </div>
-    <button class="toggle" (click)="hidden()">icon</button>
+    <button class="toggle" *ngIf="!toggle" (click)="hidden()">icon</button>
 </div>

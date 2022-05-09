@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./administracion.component.scss']
 })
 export class AdministracionComponent implements OnInit {
-
+  title: string = "Escritorio"
   constructor() { }
 
   ngOnInit(): void {

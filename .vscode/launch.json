@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/cashproServer/usuarios/usuariosApp.js"
+            "program": "${workspaceFolder}/cashproApp.js"
         }
     ]
 }

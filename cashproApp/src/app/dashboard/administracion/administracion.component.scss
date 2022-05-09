@@ -1,0 +1,43 @@
+.dashboardBox {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-self: center;
+    width: 85%;
+    height: 80%;
+    padding: 20px;
+    background-color: rgba(196, 196, 196, 0.4);
+    border-radius: 37px;
+    margin: auto;
+    .dashboardHeader {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      img {
+        width: 130px;
+        margin: auto;
+      }
+      p {
+        margin: 0;
+        font-size: 30px;
+        font-weight: bold;
+        color: white;
+      }
+    }
+    .dashboardContentBox {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+      .dashboardSidemenu {
+        width: 20%;
+      }
+      .dashboardContent {
+        width: 80%;
+      }
+    }
+  }
+  @media only screen and (min-width: 768px) {
+  }
+  

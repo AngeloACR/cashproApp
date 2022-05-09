@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthorizationService } from 'src/app/authorization/services/authorization.service';
 
 @Component({
   selector: 'app-menu-header',
@@ -13,7 +14,7 @@ export class MenuHeaderComponent implements OnInit {
     this.toggle = !this.toggle;
   }
 
-  constructor() { }
+  constructor(public auth: AuthorizationService) { }
 
   ngOnInit(): void {
   }

@@ -1,6 +1,9 @@
 <div class="mainBox">
-  <app-info-header></app-info-header>
-  <app-menu-header></app-menu-header>
-  <router-outlet></router-outlet>
+  <app-info-header style="z-index:100;"></app-info-header>
+  <app-menu-header style="z-index:100;"></app-menu-header>
+  <div class="containerBox" style="z-index:50;">
+    
+    <router-outlet></router-outlet>
+  </div>
   <app-footer></app-footer>
 </div>

@@ -14,6 +14,7 @@ import { RecuperarComponent } from './containers/recuperar/recuperar.component';
 import { RestaurarComponent } from './containers/restaurar/restaurar.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [

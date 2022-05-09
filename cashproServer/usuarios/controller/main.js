@@ -1,35 +1,12 @@
 const bcrypt = require("bcryptjs");
 const environment = require("../../environments/local");
-const crypto = require("crypto");
-const jwt = require("jsonwebtoken");
-const { usuarioLogger, authLogger } = require("../../logging");
+const { usuarioLogger } = require("../logging");
 const Usuario = require("../models/usuario");
 const mainController = {
-  comparePass: async (candidatePassword, password) => {
-    try {
-      return await bcrypt.compare(candidatePassword, password);
-    } catch (error) {
-      throw error;
-    }
-  },
   hashPass: async (password) => {
     try {
       let salt = await bcrypt.genSalt(10);
       return await bcrypt.hash(password, salt);
-    } catch (error) {
-      throw error;
-    }
-  },
-  genToken: (username) => {
-    try {
-      const hash = crypto.createHash("sha1");
-
-      var hrTime = process.hrtime();
-      var validTime = hrTime[0] * 1000000 + hrTime[1] / 1000;
-
-      var toHash = username + validTime.toString() + environment.vSecret;
-      hash.update(toHash);
-      return [hash.digest("hex"), validTime];
     } catch (error) {
       throw error;
     }
@@ -79,79 +56,45 @@ const mainController = {
       res.status(400).json(response);
     }
   },
-
-  updatePassword: async (newUser, password) => {
+  deleteUser: async (req, res) => {
     try {
-      let user = await Usuario.findOne({ username: newUser.username });
-      user.password = await mainController.hashPass(password);
-      user = await newUser.save();
-      let response = {
-        status: true,
-        values: user,
-      };
-    } catch (error) {
-      throw error;
-    }
-  },
-
-  requestPasswordUpdate: async (newUser, password) => {
-    try {
-      let user = await Usuario.findOne({ username: newUser.username });
-      user.password = await mainController.hashPass(password);
-      user = await newUser.save();
-      let response = {
-        status: true,
-        values: user,
-        username,
-      };
-    } catch (error) {
-      throw error;
-    }
-  },
-
-  authUser: async (req, res) => {
-    try {
-      let username = req.body.username;
-      let password = req.body.password;
+      let username = req.params.username;
       const query = { username: username };
-      let user = await Usuario.findOne(query); //.select('-password')
-      if (!user) {
-        throw new Error(
-          "Usuario o contraseña inválido. Por favor, revisa tus credenciales e intenta de nuevo"
-        );
-      }
-      let isMatch = await mainController.comparePass(password, user.password);
+      let user = await Usuario.findOne(query);
+      let appointments;
+      switch (user.type) {
+        case "Admin":
+          user.adminId.remove();
+          appointments = user.patientId.appointmentsId;
+          for (let appointment of appointments) {
+            await appointment.remove();
+          }
+          user.patientId.remove();
+          break;
+        case "Paciente":
+          appointments = user.patientId.appointmentsId;
+          for (let appointment of appointments) {
+            await appointment.remove();
+          }
+          user.patientId.remove();
+          break;
 
-      let auth = {};
-      if (isMatch) {
-        let payload = {
-          _id: user._id,
-          type: user.type,
-          name: user.name,
-          mail: user.mail,
-          phone: user.phone,
-          avatarSrc: user.avatarSrc,
-        };
-        const token = jwt.sign(payload, environment.authSecret, {
-          expiresIn: 604800, //1 week
-        });
-        auth = {
-          status: true,
-          token: token,
-        };
-        /* sess.isLogged = auth.auth;
-        sess.jwToken = auth.token; */
-      } else {
-        throw new Error(
-          "Usuario o contraseña inválido. Por favor, revisa tus credenciales e intenta de nuevo"
-        );
+        default:
+          appointments = user.doctorId.appointmentsId;
+          for (let appointment of appointments) {
+            await appointment.remove();
+          }
+          user.doctorId.remove();
+          break;
       }
-      authLogger.info("authUser", {
-        data: auth,
-      });
-      res.status(200).json(auth);
+      let result = await user.remove();
+      let response = {
+        status: true,
+        values: result,
+      };
+      res.status(200).json(response);
     } catch (error) {
-      authLogger.error("authUser.error", {
+      usuarioLogger.error("deleteUser.error", {
         errorMessage: error.message,
       });
       let response = {
@@ -161,8 +104,9 @@ const mainController = {
       res.status(400).json(response);
     }
   },
-  deleteUser: async (username) => {
+  deleteManyUsers: async (req, res) => {
     try {
+      let usernames = req.params.usernames;
       const query = { username: username };
       let user = await Usuario.findOne(query);
       let appointments;
@@ -175,7 +119,7 @@ const mainController = {
           }
           user.patientId.remove();
           break;
-        case "Paciente":
+        case "Asociado":
           appointments = user.patientId.appointmentsId;
           for (let appointment of appointments) {
             await appointment.remove();
@@ -196,51 +140,21 @@ const mainController = {
         status: true,
         values: result,
       };
+      res.status(200).json(response);
     } catch (error) {
-      throw error;
-    }
-  },
-  deleteManyUsers: async (username) => {
-    try {
-      const query = { username: username };
-      let user = await Usuario.findOne(query);
-      let appointments;
-      switch (user.type) {
-        case "Admin":
-          user.adminId.remove();
-          appointments = user.patientId.appointmentsId;
-          for (let appointment of appointments) {
-            await appointment.remove();
-          }
-          user.patientId.remove();
-          break;
-        case "Paciente":
-          appointments = user.patientId.appointmentsId;
-          for (let appointment of appointments) {
-            await appointment.remove();
-          }
-          user.patientId.remove();
-          break;
-
-        default:
-          appointments = user.doctorId.appointmentsId;
-          for (let appointment of appointments) {
-            await appointment.remove();
-          }
-          user.doctorId.remove();
-          break;
-      }
-      let result = await user.remove();
+      usuarioLogger.error("deleteManyUsers.error", {
+        errorMessage: error.message,
+      });
       let response = {
-        status: true,
-        values: result,
+        status: "error",
+        message: error.message,
       };
-    } catch (error) {
-      throw error;
+      res.status(400).json(response);
     }
   },
-  updateUser: async (data) => {
+  updateUser: async (req, res) => {
     try {
+      let data = req.body.data;
       const query = { _id: data.id };
       let user = await Usuario.findOne(query);
       user.name = data.name;
@@ -251,26 +165,41 @@ const mainController = {
         status: true,
         values: user,
       };
-      return response;
+      res.status(200).json(response);
     } catch (error) {
-      throw error;
+      usuarioLogger.error("updateUser.error", {
+        errorMessage: error.message,
+      });
+      let response = {
+        status: "error",
+        message: error.message,
+      };
+      res.status(400).json(response);
     }
   },
-  getUser: async (uid) => {
+  getUser: async (req, res) => {
     //Need tons of work
     try {
+      let uid = req.params.uid;
       const query = { _id: uid };
       let user = await Usuario.findOne(query);
       let response = {
         status: true,
         values: user,
       };
-      return response;
+      res.status(200).json(response);
     } catch (error) {
-      throw error;
+      usuarioLogger.error("getUser.error", {
+        errorMessage: error.message,
+      });
+      let response = {
+        status: "error",
+        message: error.message,
+      };
+      res.status(400).json(response);
     }
   },
-  getUsers: async () => {
+  getUsers: async (req, res) => {
     //Need tons of work
     try {
       const query = {};
@@ -279,52 +208,16 @@ const mainController = {
         status: true,
         values: users,
       };
-      return response;
+      res.status(200).json(response);
     } catch (error) {
-      throw error;
-    }
-  },
-  setToken: async (username) => {
-    try {
-      let tokenData = mainController.genToken(username);
-      const query = { username: username };
-      let user = await Usuario.findOneAndUpdate(query, {
-        $set: {
-          validEmail: false,
-          validToken: tokenData[0],
-          validTime: tokenData[1],
-        },
+      usuarioLogger.error("getUsers.error", {
+        errorMessage: error.message,
       });
-      return user;
-    } catch (error) {
-      throw error;
-    }
-  },
-  validateUser: async (username, token) => {
-    try {
-      const hrTime = process.hrtime();
-      const mainControllerTime = hrTime[0] * 1000000 + hrTime[1] / 1000;
-      const maxTime = 3600 * 8 * 1000000;
-      const query = { username: username };
-
-      let user = await Usuario.findOne(query);
-
-      if (mainControllerTime - user.validTime < maxTime) {
-        if (user.validToken == token) {
-          user = await Usuario.findOneAndUpdate(query, {
-            $set: {
-              validEmail: true,
-            },
-          });
-          return user;
-        } else {
-          throw new Error("Wrong token");
-        }
-      } else {
-        throw new Error("Token has expired");
-      }
-    } catch (error) {
-      throw error;
+      let response = {
+        status: "error",
+        message: error.message,
+      };
+      res.status(400).json(response);
     }
   },
 };

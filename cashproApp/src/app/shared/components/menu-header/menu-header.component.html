@@ -1,27 +1,28 @@
 <div class="menuHeaderBox">
     <div class="logoBox">
-        <img src="/assets/grafico-home.png" alt="">
+        <img src="/assets/logo.png" alt="">
     </div>
     <div class="enlaces"> 
         <div class="menuBox">
             <ul>
                 <li>
-                    <a href="">Quienes somos</a>
+                    <a href="/#quienesSomos">Quienes somos</a>
                 </li>
                 <li>
-                    <a href="">Que hacemos</a>
+                    <a href="/#queHacemos">Que hacemos</a>
                 </li>
                 <li>
-                    <a href="">Forma parte</a>
+                    <a href="/#formaParte">Forma parte</a>
                 </li>
                 <li>
-                    <a href="">Contacto</a>
+                    <a href="/#contacto">Contacto</a>
                 </li>
             </ul>
         </div>
         <div class="auth">
-            <a class="register">REGISTRATE</a>
-            <button class="login">INICIAR</button>
+            <a *ngIf="!auth.isAuthenticated()" class="register" href="/auth/registro">REGISTRATE</a>
+            <a *ngIf="!auth.isAuthenticated()" class="login" href="auth/">INICIAR SESIÓN</a>
+            <button *ngIf="auth.isAuthenticated()" class="login" (click)="auth.logout()">CERRAR SESIÓN</button>
         </div>
     </div>
     <div class="burger" [ngClass]="{'activo': toggle, 'inactivo': !toggle}" > 
@@ -29,16 +30,16 @@
         <div class="burgerBox">
             <ul>
                 <li>
-                    <a href="">Quienes somos</a>
+                    <a href="/#quienesSomos">Quienes somos</a>
                 </li>
                 <li>
-                    <a href="">Que hacemos</a>
+                    <a href="/#queHacemos">Que hacemos</a>
                 </li>
                 <li>
-                    <a href="">Forma parte</a>
+                    <a href="/#formaParte">Forma parte</a>
                 </li>
                 <li>
-                    <a href="">Contacto</a>
+                    <a href="/#contacto">Contacto</a>
                 </li>
             </ul>
         </div>

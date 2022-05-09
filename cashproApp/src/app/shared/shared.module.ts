@@ -10,7 +10,8 @@ import { MenuHeaderComponent } from './components/menu-header/menu-header.compon
 import { FooterComponent } from './components/footer/footer.component';
 import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
 import { ConfirmComponent } from './components/confirm/confirm.component';
-
+import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
     MenuHeaderComponent,
     FooterComponent,
     SidemenuComponent,
-    ConfirmComponent
+    ConfirmComponent,
   ],
   exports: [
     LoaderComponent,
@@ -30,10 +31,8 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
     MenuHeaderComponent,
     FooterComponent,
     SidemenuComponent,
-    ConfirmComponent
+    ConfirmComponent,
   ],
-  imports: [
-    CommonModule,
-  ]
+  imports: [CommonModule, FontAwesomeModule, RouterModule],
 })
-export class SharedModule { }
+export class SharedModule {}

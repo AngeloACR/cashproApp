@@ -1,1 +1,15 @@
-<p>sidemenu works!</p>
+<nav id="cashNav" class="navBox">
+  <ul class="navList">
+    <div class="listMenuBox" *ngFor="let item of myMenu">
+      <li [id]="item.id" class="navElement opt" (click)="tMenu($event, item)">
+        <a
+          [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [routerLink]="item.link"
+        >
+          <fa-icon [icon]="item.icon" class="menuIcon"></fa-icon>{{ item.name }}
+        </a>
+      </li>
+    </div>
+  </ul>
+</nav>

@@ -1,1 +1,14 @@
-<router-outlet></router-outlet>
+<div class="dashboardBox">
+  <div class="dashboardHeader">
+    <img src="assets/grafico-escritorio.png" alt="" />
+    <p>{{ title }}</p>
+  </div>
+  <div class="dashboardContentBox">
+    <div class="dashboardSidemenu">
+      <app-sidemenu></app-sidemenu>
+    </div>
+    <div class="dashboardContent">
+        <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

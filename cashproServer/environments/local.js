@@ -6,6 +6,7 @@ module.exports = {
     mSecret: "My secret moves will never be discovered",
   
     // SERVERS DATA
+    authPort: 4000,
     usuariosPort: 4500,
     oficinaPort: 5000,
     pagosPort: 5500,

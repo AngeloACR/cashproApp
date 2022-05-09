@@ -5,6 +5,8 @@ import { AdministracionRoutingModule } from './administracion-routing.module';
 import { AdministracionComponent } from './administracion.component';
 import { ListaUsuariosComponent } from './containers/lista-usuarios/lista-usuarios.component';
 import { PerfilComponent } from './containers/perfil/perfil.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { PerfilComponent } from './containers/perfil/perfil.component';
   ],
   imports: [
     CommonModule,
-    AdministracionRoutingModule
+    RouterModule ,
+    AdministracionRoutingModule,
+    SharedModule,
   ]
 })
 export class AdministracionModule { }

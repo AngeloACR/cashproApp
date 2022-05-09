@@ -1,7 +1,7 @@
 const db = require("../database");
 const usuarioServer = require("./usuariosServer");
 const config = require("../environments/local");
-const cronjobs = require("../cronjobs");
+const cronjobs = require("./cronjobs");
 
 // https://www.nginx.com/blog/nginx-caching-guide/
 const connection = db.initConnect();

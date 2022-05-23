@@ -8,6 +8,10 @@ import { PerfilComponent } from './containers/perfil/perfil.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
 
+import { MatTableModule } from '@angular/material/table';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatIconModule} from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +24,10 @@ import { RouterModule } from '@angular/router';
     RouterModule ,
     AdministracionRoutingModule,
     SharedModule,
+
+    MatTableModule,
+    MatSlideToggleModule,
+    MatIconModule
   ]
 })
 export class AdministracionModule { }

@@ -1,0 +1,64 @@
+.oficinaBox {
+    width:90%; 
+    margin: auto;
+    .oficinaTablaBox {
+        display:flex; 
+        justify-content: space-around;
+        .oficinaTabla {
+            width: 70%;
+            margin-right: 30px;
+            border-radius: 30px; 
+            background-color: #fff; 
+            opacity: .8;
+            .oficinaTitle {
+                border-bottom: 1px solid #006B80; 
+                display:flex; 
+                padding: 10px 15px 0 15px;
+                justify-content: space-between;
+                h4 {
+                    color: #006B80;
+                    font-family: 'Comfortaa';
+                }
+                span {
+                    color: #006B80;
+                }
+            }
+            .oficinaInfo {
+                overflow-y: scroll; 
+                padding: 0 20px; 
+                margin-top: 15px; 
+                height: 7rem;
+                
+                .oficinaInfoItem {
+                    border-bottom: 1px solid #006B80; 
+                    padding-bottom: 8px;
+                    color: #006B80;
+                    font-family: 'Comfortaa';
+                    font-size: 12px;
+                }
+            }
+        }
+        .select {
+            width: 40%;
+            height: 30px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 30px;
+            background-color: #C4C4C4;
+            p:nth-child(1) {
+                margin-bottom: 0;
+                border-radius: 30px;
+                background-color: #006B80;
+                color: #fff;
+            }
+            p {
+                margin-bottom: 0;
+                color: #006B80;
+                font-size: 14px;
+                font-weight: 600;
+                padding: 6px 25px;
+            }
+        }
+    }
+}

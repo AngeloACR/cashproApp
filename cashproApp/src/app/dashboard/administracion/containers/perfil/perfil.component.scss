@@ -1,0 +1,48 @@
+.perfilBox {
+    width: 80%;
+    margin: auto;
+    .imgPerfil {
+        width: 100%;
+    }
+    .perfilInfoBox {
+        display: grid; 
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        .infoBox {
+            display: flex;
+            flex-direction: column;
+            .infoTitle {
+                display: flex;
+                align-items: center;
+                margin-bottom: 10px;
+                h3 {
+                    font-family: 'Inter';
+                    font-size: 16px;
+                    color: #fff;
+                    margin-bottom: 0;
+                }
+                mat-icon {
+                    margin-left: 10px;
+                    color: #fff;
+                    font-size: 16px;
+                }
+            }
+            .info {
+                padding-left: 15px;
+                p {
+                    font-size: 12px;
+                    font-family: 'Comfortaa';
+                    color: #fff;
+                }
+            }
+        }
+        button {
+            color: #fff;
+            padding: 10px 50px;
+            border-radius: 20px;
+            background-color: #006B80;
+            border: none;
+            font-family: 'Comfortaa', sans-serif;
+        }
+    }
+}

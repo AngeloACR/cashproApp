@@ -33,10 +33,10 @@ export class SidemenuComponent implements OnInit {
     this.isAdmin = type === 'Administrador';
     this.isAsociado = type === 'Asociado';
     if (this.isAdmin) {
-      this.setAdminMenu();
     } else if (this.isAsociado) {
       this.setAsociadoMenu();
     }
+    this.setAdminMenu();
   }
 
   setAdminMenu() {

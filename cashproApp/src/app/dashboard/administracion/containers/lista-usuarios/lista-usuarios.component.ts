@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DetailsComponent } from 'src/app/dashboard/components/details/details.component';
+import { DialogComponent } from 'src/app/dashboard/components/dialog/dialog.component';
+
 
 export interface PeriodicElement {
   nombre: string;
@@ -46,10 +50,28 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class ListaUsuariosComponent implements OnInit {
 
 
-  displayedColumns: string[] = ['nombre', 'correo', 'estatus', 'visitar_arbol', 'deshabilitar'];
+  displayedColumns: string[] = ['nombre', 'btn', 'correo', 'estatus', 'visitar_arbol', 'deshabilitar'];
   dataSource = ELEMENT_DATA;
 
-  constructor() { }
+  constructor( public dialog: MatDialog ) { }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+    });
+  }
+
+  openDetails() {
+    const detallesRef = this.dialog.open(DetailsComponent, {
+      
+    });
+
+    detallesRef.afterClosed().subscribe(result => {
+    });
+  }
 
   ngOnInit(): void {
   }

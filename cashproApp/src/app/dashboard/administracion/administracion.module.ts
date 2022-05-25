@@ -9,9 +9,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
 
 import { MatTableModule } from '@angular/material/table';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import {MatIconModule} from '@angular/material/icon';
-
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import {MatIconModule} from '@angular/material/icon';
 
     MatTableModule,
     MatSlideToggleModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ]
 })
 export class AdministracionModule { }

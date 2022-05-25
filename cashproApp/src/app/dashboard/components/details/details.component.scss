@@ -1,0 +1,47 @@
+.dialogBoxTitle {
+    display:flex; 
+    // align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+        margin-bottom: 0;
+        color: #fff;
+        font-family: 'Inter';
+        font-size: 15px;
+        text-align: left;
+    }
+    span {
+        color: #fff;
+        font-size: 16px;
+        margin-right: 10px;
+    }
+}
+
+::ng-deep.mat-dialog-container {
+    background-color: rgba(196, 196, 196, 0.9);
+
+}
+
+::ng-deep.mat-dialog-content {
+    color: #fff;
+    margin-top: 10px;
+    p {
+        font-size: 13px;
+        font-family: 'Inter';
+    }
+    span {
+        font-size: 10px;
+        font-family: 'Comfortaa';
+    }
+    .buttonBox {
+        display: flex;
+        justify-content: space-between;
+        button {
+            border: none;
+            background-color: #fff;
+            border-radius: 30px;
+            color: #006B80;
+            padding: 10px 20px;
+        }
+    }
+}

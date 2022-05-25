@@ -22,13 +22,41 @@ export class RegistroComponent implements OnInit {
   errorMsg: string = '';
   showError = { errorAct: false };
 
-  constructor(private router: Router, private auth: AuthorizationService) {}
+  view: number = 3;
+  width: number = 0;
+  screen: boolean = false;
 
-  ngOnInit(): void {}
+  constructor(
+    private router: Router, 
+    private auth: AuthorizationService
+  ) {}
+
+  ngOnInit(): void {
+    this.width = screen.width;
+    this.comprobarScreen(this.width);
+  }
+
+  comprobarScreen(width:number) {
+    if(width > 768) {
+      this.screen = true;
+    } else {
+      this.screen = false;
+      this.view = 0;
+    }
+  }
 
   setBirthday(e: any): void {
     this.birthday = e.target.value;
   }
+
+  siguiente(): void {
+    this.view ++;
+  }
+
+  volver(): void {
+    this.view --;
+  }
+
   async registrar() {
     var data = {
       names: this.names,

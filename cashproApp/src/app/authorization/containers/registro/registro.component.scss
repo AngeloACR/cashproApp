@@ -117,12 +117,38 @@
         font-size: 16px;
       }
     }
+    .registroMovil {
+      display: none;
+    }
+    .registroDesktop{
+      display: block;
+    }
   }
 }
-@media only screen and (min-width: 768px) {
-  .loginBox {
+
+@media only screen and (max-width: 768px) {
+  .registroHeaderBox {
+    margin-bottom: 15px;
     img {
-      width: 145px;
+      width: 70px !important;
     }
+    p {
+      font-size: 23px !important;
+    }
+  }
+  .registroColumn {
+    width: 100% !important;
+    .btnVolver {
+      background-color: #fff !important;
+      color: #006B80 !important;
+      margin-right: 15px !important;
+    }
+    
+    .registroMovil {
+      display: block !important;
+    }
+  }
+  .registroDesktop {
+    display: none !important;
   }
 }

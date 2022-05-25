@@ -26,7 +26,11 @@
         </div>
     </div>
     <div class="burger" [ngClass]="{'activo': toggle, 'inactivo': !toggle}" > 
-        <button class="btnArrow" (click)="hidden()">burger</button>
+        <button class="btnArrow" (click)="hidden()">
+            <span class="material-icons">
+                arrow_forward
+            </span>
+        </button>
         <div class="burgerBox">
             <ul>
                 <li>
@@ -48,5 +52,9 @@
             <button class="login">INICIAR</button>
         </div>
     </div>
-    <button class="toggle" (click)="hidden()">icon</button>
+    <button class="toggle" (click)="hidden()">
+        <span class="material-icons">
+            density_medium
+        </span>
+    </button>
 </div>

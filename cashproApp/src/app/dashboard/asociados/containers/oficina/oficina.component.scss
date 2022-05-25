@@ -1,6 +1,9 @@
 .oficinaBox {
     width:90%; 
     margin: auto;
+    .buttonMovil {
+        display: none
+      } 
     .oficinaTablaBox {
         display:flex; 
         justify-content: space-around;
@@ -25,8 +28,7 @@
             }
             .oficinaInfo {
                 overflow-y: scroll; 
-                padding: 0 20px; 
-                margin-top: 15px; 
+                margin: 10px 20px; 
                 height: 7rem;
                 
                 .oficinaInfoItem {
@@ -46,12 +48,6 @@
             align-items: center;
             border-radius: 30px;
             background-color: #C4C4C4;
-            p:nth-child(1) {
-                margin-bottom: 0;
-                border-radius: 30px;
-                background-color: #006B80;
-                color: #fff;
-            }
             p {
                 margin-bottom: 0;
                 color: #006B80;
@@ -59,6 +55,48 @@
                 font-weight: 600;
                 padding: 6px 25px;
             }
+            p:nth-child(1) {
+                margin-bottom: 0;
+                border-radius: 30px;
+                background-color: #006B80;
+                color: #fff;
+            }
+            
         }
     }
 }
+
+.oficinaInfo::-webkit-scrollbar {
+    width: 6px;
+}
+
+.oficinaInfo::-webkit-scrollbar-track {
+    // background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+}
+
+.oficinaInfo::-webkit-scrollbar-thumb {
+    background-color: #006B80;
+    border-radius: 10px;
+}
+@media only screen and (max-width: 768px) {
+    
+    .buttonMovil {
+        display: flex !important;
+        margin-bottom: 0 !important;
+    }
+    .titleUser {
+        font-size: 20px;
+        color: #fff;
+        font-family: 'Inter';
+      }
+
+    .oficinaTablaBox {
+        height: 300px;
+        flex-direction: column !important;
+
+        .select {
+            width: 60% !important;
+        }
+    }
+  }

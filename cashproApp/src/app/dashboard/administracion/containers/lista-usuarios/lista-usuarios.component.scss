@@ -36,6 +36,46 @@
       padding: 10px 50px;
       font-family: 'Comfortaa';
       margin-right: 4rem;
+      span {
+        color: #fff;
+      }
     }
+    .btnSigno {
+      background-color: #006B80; 
+    }
+  }
+  .buttonMovil {
+    display: none
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .listUserBox {
+    height: auto !important;
+    .tableUser {
+      margin-bottom: 120px !important;
+    }
+    .buttonBox {
+      justify-content: space-between !important;
+      button {
+        padding: 15px 30px;
+        margin-right: 0 !important;
+        span {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .column {
+    display: none;
+  }
+  .buttonMovil {
+    display: flex !important;
+    margin-bottom: 0 !important;
+  }
+  .titleUser {
+    font-size: 20px;
+    color: #fff;
+    font-family: 'Inter';
   }
 }

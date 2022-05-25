@@ -36,13 +36,62 @@
                 }
             }
         }
-        button {
-            color: #fff;
-            padding: 10px 50px;
-            border-radius: 20px;
-            background-color: #006B80;
-            border: none;
-            font-family: 'Comfortaa', sans-serif;
-        }
+        .buttonBox {
+            display: flex;
+            justify-content: end;
+            align-items: flex-end;
+            
+            button {
+                color: #fff;
+                padding: 10px 50px;
+                border-radius: 20px;
+                background-color: #006B80;
+                border: none;
+                font-family: 'Comfortaa', sans-serif;
+                span {
+                    color: #fff;
+                }
+            }
+            .btnSigno {
+              background-color: #006B80; 
+            }
+          }
+          .buttonMovil {
+            display: none
+          } 
+        // button {
+        //     color: #fff;
+        //     padding: 10px 50px;
+        //     border-radius: 20px;
+        //     background-color: #006B80;
+        //     border: none;
+        //     font-family: 'Comfortaa', sans-serif;
+        // }
     }
 }
+
+@media only screen and (max-width: 768px) {
+    .perfilInfoBox {
+        grid-template-columns: none !important;
+        grid-template-rows: 1fr 1fr 1fr !important;
+        .infoBox {
+            .infoTitle {
+                justify-content: space-between !important;
+            }
+        }
+        .buttonBox {
+            justify-content: space-between !important;
+            button {
+              padding: 15px 30px;
+              margin-right: 0 !important;
+              span {
+                font-size: 18px;
+              }
+            }
+            .buttonMovil {
+                display: flex !important;
+                margin-bottom: 0 !important;
+              }
+          }
+    }
+  }

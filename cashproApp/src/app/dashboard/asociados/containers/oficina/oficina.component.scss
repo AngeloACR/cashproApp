@@ -1,3 +1,5 @@
+
+
 .oficinaBox {
     width:90%; 
     margin: auto;
@@ -6,9 +8,9 @@
       } 
     .oficinaTablaBox {
         display:flex; 
-        justify-content: space-around;
+        justify-content: space-between;
         .oficinaTabla {
-            width: 70%;
+            width: 100%;
             margin-right: 30px;
             border-radius: 30px; 
             background-color: #fff; 
@@ -40,29 +42,95 @@
                 }
             }
         }
-        .select {
+        .containerTabs {
             width: 40%;
-            height: 30px;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            border-radius: 30px;
-            background-color: #C4C4C4;
-            p {
-                margin-bottom: 0;
-                color: #006B80;
-                font-size: 14px;
-                font-weight: 600;
-                padding: 6px 25px;
-            }
-            p:nth-child(1) {
-                margin-bottom: 0;
-                border-radius: 30px;
-                background-color: #006B80;
-                color: #fff;
-            }
             
+            .tabs {
+                width: 100%;
+                display: flex;
+                font-size: .8rem;
+                background-color: #C4C4C4;
+                padding: 13px;
+                border-radius: 100px;
+                position: relative;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        
+                .tab {
+                    width: 110px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 500;
+                    border-radius: 50px;
+                    cursor: pointer;
+                    z-index: 2;
+                }
+
+                input[type=radio] {
+                    display: none;
+                    &:checked + label {
+                        color: #fff;
+                    }
+                }
+                input[id="radio-1"]:checked ~ .glider {
+                        transform: translateX(0);
+                    transition: 0.25s ease-out;
+                }
+
+                input[id="radio-2"]:checked ~ .glider {
+                        transform: translateX(100%);
+                    transition: 0.25s ease-out;
+                }
+
+                input[id="radio-3"]:checked ~ .glider {
+                        transform: translateX(190%);
+                    transition: 0.25s ease-out;
+                }
+
+                input[id="radio-4"]:checked ~ .glider {
+                        transform: translateX(290%);
+                    transition: 0.25s ease-out;
+                }
+
+                .glider {
+                    position: absolute;
+                    top: 7px;
+                    left: 10px;
+                    display: flex;
+                    height: 30px;
+                    width: 80px;
+                    background-color: #006B80;
+                    z-index: 1;
+                    border-radius: 99px;
+                    transition: 0.25 ease-out;
+                }
+
+            }
         }
+        
+        // .select {
+        //     width: 40%;
+        //     height: 30px;
+        //     display: flex;
+        //     justify-content: space-around;
+        //     align-items: center;
+        //     border-radius: 30px;
+        //     background-color: #C4C4C4;
+        //     p {
+        //         margin-bottom: 0;
+        //         color: #006B80;
+        //         font-size: 14px;
+        //         font-weight: 600;
+        //         padding: 6px 25px;
+        //     }
+        //     p:nth-child(1) {
+        //         margin-bottom: 0;
+        //         border-radius: 30px;
+        //         background-color: #006B80;
+        //         color: #fff;
+        //     }
+            
+        // }
     }
 }
 

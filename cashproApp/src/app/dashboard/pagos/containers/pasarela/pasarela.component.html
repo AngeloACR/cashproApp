@@ -1,4 +1,4 @@
-<form action="" class="capitalizarBox">
+<form action="" class="capitalizarBox" *ngIf="view === 2">
     <div class="checkoutBox">
         <h4>CHECKOUT</h4>
         <div class="checkoutFormBox">
@@ -41,7 +41,7 @@
                     <span>Tarjeta de crédito/débito</span>
                 </div>
                 <div class="tarjetaPago">
-                    
+
                 </div>
                 <button class="button">EFECTUAR PAGO</button>
             </div>
@@ -54,4 +54,67 @@
             </div>
         </div>
     </div>
+</form>
+
+<form action="" class="capitalizarBox" *ngIf="view !== 2">
+    <div class="checkoutBox" *ngIf="view === 0">
+        <h4>CHECKOUT</h4>
+        <div class="checkoutFormBox">
+            <div class="inputCheckout">
+                <input type="text" placeholder="Nombres">
+                <input type="text" placeholder="Apellidos">
+            </div>
+            <div class="inputCheckout">
+                <input type="text" placeholder="Nombre De La Empresa (Opcional)">
+            </div>
+            <div class="inputCheckout">
+                <input type="text" placeholder="Pais / Region * ">
+            </div>
+            <div class="inputCheckout">
+                <input type="text" placeholder="Direccion De La Calle *">
+            </div>
+            <div class="inputCheckout">
+                <input type="text" placeholder="Localidad / Ciudad *">
+                <input type="text" placeholder="Región / Provincia *">
+            </div>
+            <div class="inputCheckout">
+                <input type="text" placeholder="Código Postal *">
+                <input type="text" placeholder="Teléfono *">
+            </div>
+            <div class="inputCheckout">
+                <input type="text" placeholder="Dirección De Correo Electrónico *">
+            </div>
+        </div>
+        <button mat-button (click)="siguiente()" class="registroDesktop btnCustom">SIGUIENTE</button>
+    </div>
+    <div class="boxSolicitud" *ngIf="view === 1">
+        <div class="solicitudBox" >
+            <h4>Solicitud de asociado</h4>
+            <div class="solicitudCostoInput">
+                <input type="text" placeholder="Costo de la solicitud ">
+            </div>
+            <h4>Metodos de pago</h4>
+            <div class="metodosPagoBox">
+                <div class="metodoBox">
+                    <div class="radioInput">
+                        <input type="radio" name="metodoPago">
+                        <span>Tarjeta de crédito/débito</span>
+                    </div>
+                    <div class="tarjetaPago">
+
+                    </div>
+                    <button class="button">EFECTUAR PAGO</button>
+                </div>
+                <div class="metodoBox">
+                    <div class="radioInput">
+                        <input type="radio" name="metodoPago">
+                        <span>Pago por Paypal</span>
+                    </div>
+                    <button class="button">Paypal</button>
+                </div>
+            </div>
+        </div>
+        <button mat-button (click)="volver()" class="registroDesktop btnCustom">VOLVER</button>
+    </div>
+
 </form>

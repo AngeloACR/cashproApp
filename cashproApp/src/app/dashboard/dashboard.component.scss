@@ -71,5 +71,18 @@
     }
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
+  .dashboardBox {
+    .movil {
+        display: none;
+      }
+
+    .dashboardSidemenu {
+      display: none;
+      
+    }
+    .dashboardContent {
+      width: 100% !important;
+    }
+  }
 }

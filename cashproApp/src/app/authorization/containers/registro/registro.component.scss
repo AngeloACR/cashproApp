@@ -21,6 +21,7 @@
       font-size: 30px;
       font-weight: bold;
       color: white;
+      font-family: "Inter";
     }
   }
   .registroContentBox {
@@ -36,14 +37,15 @@
       }
       .registroText {
         color: white;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: normal;
         text-align: justify;
       }
       p {
-        font-size: 25px;
+        font-size: 20px;
         font-weight: bold;
         color: white;
+        font-family: 'Inter', sans-serif;
       }
       .formInput {
         width: 100%;
@@ -52,6 +54,8 @@
       ::ng-deep .formInput {
         mat-label {
           color: white;
+          font-family: 'Comfortaa', sans-serif;
+          font-size: 12px;
         }
         .mat-datepicker-toggle-default-icon {
           color: white;
@@ -113,12 +117,38 @@
         font-size: 16px;
       }
     }
+    .registroMovil {
+      display: none;
+    }
+    .registroDesktop{
+      display: block;
+    }
   }
 }
-@media only screen and (min-width: 768px) {
-  .loginBox {
+
+@media only screen and (max-width: 768px) {
+  .registroHeaderBox {
+    margin-bottom: 15px;
     img {
-      width: 145px;
+      width: 70px !important;
     }
+    p {
+      font-size: 23px !important;
+    }
+  }
+  .registroColumn {
+    width: 100% !important;
+    .btnVolver {
+      background-color: #fff !important;
+      color: #006B80 !important;
+      margin-right: 15px !important;
+    }
+    
+    .registroMovil {
+      display: block !important;
+    }
+  }
+  .registroDesktop {
+    display: none !important;
   }
 }

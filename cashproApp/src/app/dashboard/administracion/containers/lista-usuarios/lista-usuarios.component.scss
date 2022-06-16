@@ -1,0 +1,81 @@
+.listUserBox {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  table {
+    width: 100%;
+    background: none;
+    th, td {
+      color: #fff;
+    }
+    th {
+      font-family: 'Inter';
+      font-size: 14px;
+    }
+    td {
+      font-family: 'Comfortaa';
+      font-size: 12px;
+
+      button {
+        border: none;
+        border-radius: 50px;
+        padding: 7px 25px;
+      }
+    }
+  }
+  
+  .buttonBox {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    
+    button {
+      border: none;
+      border-radius: 50px;
+      padding: 10px 50px;
+      font-family: 'Comfortaa';
+      margin-right: 4rem;
+      span {
+        color: #fff;
+      }
+    }
+    .btnSigno {
+      background-color: #006B80; 
+    }
+  }
+  .buttonMovil {
+    display: none
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .listUserBox {
+    height: auto !important;
+    .tableUser {
+      margin-bottom: 120px !important;
+    }
+    .buttonBox {
+      justify-content: space-between !important;
+      button {
+        padding: 15px 30px;
+        margin-right: 0 !important;
+        span {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+  .column {
+    display: none;
+  }
+  .buttonMovil {
+    display: flex !important;
+    margin-bottom: 0 !important;
+  }
+  .titleUser {
+    font-size: 20px;
+    color: #fff;
+    font-family: 'Inter';
+  }
+}

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DetailsComponent } from 'src/app/dashboard/components/details/details.component';
-import { DialogComponent } from 'src/app/dashboard/components/dialog/dialog.component';
+// import { DetailsComponent } from 'src/app/dashboard/asociados/components/dia';
+import { DialogAnimations } from 'src/app/dashboard/asociados/components/dialog/dialog.component';
 
 
 export interface PeriodicElement {
@@ -14,30 +14,30 @@ export interface PeriodicElement {
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {
-    nombre: 'Junior Calzadilla', 
-    correo: 'ft94juniorecalzadilla@gmail.com', 
-    estatus: 'Asociado A', 
+    nombre: 'Junior Calzadilla',
+    correo: 'ft94juniorecalzadilla@gmail.com',
+    estatus: 'Asociado A',
     visitar_arbol: '',
     deshabilitar: true
-  }, 
+  },
   {
-    nombre: 'Roger Freites', 
-    correo: 'RogerFreites@gmail.com', 
-    estatus: 'Asociado A', 
+    nombre: 'Roger Freites',
+    correo: 'RogerFreites@gmail.com',
+    estatus: 'Asociado A',
     visitar_arbol: '',
     deshabilitar: false
   },
   {
-    nombre: 'Maria Almeida', 
-    correo: 'MariaAlmeida@gmail.com', 
-    estatus: 'Asociado A', 
+    nombre: 'Maria Almeida',
+    correo: 'MariaAlmeida@gmail.com',
+    estatus: 'Asociado A',
     visitar_arbol: '',
     deshabilitar: true
   },
   {
-    nombre: 'John Ramirez', 
-    correo: 'JohnRamirez@gmail.com', 
-    estatus: 'Asociado A', 
+    nombre: 'John Ramirez',
+    correo: 'JohnRamirez@gmail.com',
+    estatus: 'Asociado A',
     visitar_arbol: '',
     deshabilitar: true
   }
@@ -56,8 +56,8 @@ export class ListaUsuariosComponent implements OnInit {
   constructor( public dialog: MatDialog ) { }
 
   openDialog() {
-    const dialogRef = this.dialog.open(DialogComponent, {
-      
+    const dialogRef = this.dialog.open(DialogAnimations, {
+
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -65,8 +65,8 @@ export class ListaUsuariosComponent implements OnInit {
   }
 
   openDetails() {
-    const detallesRef = this.dialog.open(DetailsComponent, {
-      
+    const detallesRef = this.dialog.open(DialogAnimations, {
+
     });
 
     detallesRef.afterClosed().subscribe(result => {

@@ -1,22 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
-import { DialogComponent } from './components/dialog/dialog.component';
-import { MatDialogModule } from '@angular/material/dialog';
-import { DetailsComponent } from './components/details/details.component';
-
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-
+import { DialogAnimations } from './asociados/components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
     DashboardComponent,
-    DialogComponent,
-    DetailsComponent
+    DialogAnimations
   ],
   imports: [
     CommonModule,
@@ -24,7 +19,13 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     DashboardRoutingModule,
     SharedModule,
     MatDialogModule,
-    MatSlideToggleModule
-  ]
+    MatSlideToggleModule,
+  ],
+  providers: [
+    {
+      provide: MatDialogRef,
+      useValue: {hasBackdrop: false}
+    }
+  ],
 })
 export class DashboardModule { }

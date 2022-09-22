@@ -18,7 +18,7 @@ export class GraficaComponent implements OnInit {
       y,
       label: usuario.nombre,
       size: 10,
-      color: '#03fa45',
+      color: '#00abcd',
     });
     this.graph.setNodeAttribute(usuario.id, 'data', usuario);
     let yAux = y - 1;
@@ -152,7 +152,7 @@ export class GraficaComponent implements OnInit {
       draggedNode = null;
     });
       renderer.on(
-        'clickNode',
+        'doubleClickNode',
         ({ event }: { event: { x: number; y: number } }) => {
           const closestNodes = this.graph
           .nodes()
